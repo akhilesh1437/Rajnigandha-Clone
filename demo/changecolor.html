@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <style>
+      .btn-slider-button{
+        padding: 0px !important;
+        cursor: pointer !important;
+      }
+      .btn-primary{
+        background-color: #c8a357 !important;
+        border: #c8a357 !important;
+        cursor: pointer;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- collapse example -->
+        <h4>Collapse (Show/Hide)</h4>
+        <div class="btn-group btn-toggle"> 
+          <button class="btn  btn-primary btn-slider-button"data-toggle="collapse" data-target="#collapsible" style="width: 100px;"><span style="font-size: 13px;">Login with </span> <br/> PASSWORD</button>
+          <button class="btn btn-default active buttom-slider" data-toggle="collapse" data-target="#collapsible" style="width: 100px;"><span style="font-size: 13px;">Login with </span> <br/> OTP</button>
+        </div>
+       
+      
+        
+      </div>
+        
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    $('.btn-toggle').click(function() {
+    $(this).find('.btn').toggleClass('active');  
+    
+    if ($(this).find('.btn-primary').length>0) {
+    	$(this).find('.btn').toggleClass('btn-primary');
+    }
+    
+    $(this).find('.btn').toggleClass('btn-default');
+       
+});
+
+$('form').submit(function(){
+	alert($(this["options"]).val());
+    return false;
+});
+</script>
+</html>
